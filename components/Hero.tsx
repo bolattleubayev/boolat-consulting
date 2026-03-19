@@ -16,34 +16,34 @@ export function Hero() {
           <div className="md:col-span-7 lg:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/70 px-3 py-1 text-xs text-slate-700 shadow-sm shadow-slate-900/5 backdrop-blur">
               <span className="size-1.5 rounded-full bg-gradient-to-r from-navy to-navy-2" />
-              Practical data and digital systems for SMEs
+              Data engineering and systems consulting for SMEs
             </div>
             <h1 className="mt-6 max-w-3xl text-balance text-4xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
-              From raw data to real decisions
+              Data systems that power better business decisions
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-600">
-              We help small and medium businesses build data pipelines, automate
-              reporting, and create digital tools that improve operations and
-              decision-making.
+              We design and build data pipelines, integrate business systems, and
+              develop analytics platforms for small and medium businesses across
+              cloud and on-premise environments.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <ButtonLink href="/contact" variant="primary">
                 Book a consultation
               </ButtonLink>
-              <ButtonLink href="/dashboards" variant="secondary">
-                View demo dashboards
+              <ButtonLink href="/case-studies" variant="secondary">
+                View case studies
               </ButtonLink>
             </div>
 
             <div className="mt-5 inline-flex flex-wrap items-center gap-2 text-sm text-slate-500">
               <span className="rounded-full bg-slate-100 px-2.5 py-1 ring-1 ring-slate-900/10">
-                Azure Data Engineering
+                Azure + Databricks
               </span>
               <span>•</span>
-              <span>AI/ML aware</span>
+              <span>System integration</span>
               <span>•</span>
-              <span>SME-focused delivery</span>
+              <span>Cloud and on-premise delivery</span>
             </div>
           </div>
 

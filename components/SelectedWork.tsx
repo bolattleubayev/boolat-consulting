@@ -19,8 +19,14 @@ const featuredWork: WorkItem[] = [
   {
     title: "AI multi-source system",
     description:
-      "An R&D architecture combining real-time streams from multiple sources with an AI reasoning layer for structured outputs.",
+      "An advanced R&D system combining multi-source health-related data, structured processing, and an AI reasoning layer for decision-support workflows.",
     href: "/case-studies#ai-multi-source-system",
+  },
+  {
+    title: "AR mobile prototypes",
+    description:
+      "AR prototypes demonstrating image recognition, tracking, 3D interaction, and accessibility-oriented concepts for mobile experiences.",
+    href: "/case-studies#ar-mobile-prototypes",
   },
 ];
 
@@ -34,7 +40,7 @@ export function SelectedWork() {
           description="A quick view of practical projects focused on reliability, processing quality, and decision-ready outputs."
         />
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {featuredWork.map((item) => (
             <article
               key={item.title}

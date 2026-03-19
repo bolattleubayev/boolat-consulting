@@ -163,37 +163,38 @@ const services: Service[] = [
   {
     title: "Data Engineering",
     description:
-      "Build reliable data pipelines and structured datasets that remove bottlenecks in reporting and operations.",
-    value: "Value: Less time fixing data issues, more time acting on insights.",
+      "Design and implement Azure and Databricks data pipelines, transformation jobs, and governed data models for dependable reporting.",
+    value: "Value: Reliable, decision-ready data with fewer failures and rework.",
     icon: "database",
+  },
+  {
+    title: "Data Integration",
+    description:
+      "Connect ERP, CRM, finance, operations, and line-of-business systems into a unified data flow across cloud and on-premise environments.",
+    value:
+      "Value: Eliminate silos and create one consistent view of business performance.",
+    icon: "devices",
   },
   {
     title: "Analytics Dashboards",
     description:
-      "Create clear KPI dashboards for owners and managers to track revenue, costs, delivery, and growth in one place.",
-    value: "Value: Better visibility for faster, more confident decisions.",
+      "Build analytics dashboards and KPI layers that give leadership and operations teams visibility into revenue, delivery, costs, and risks.",
+    value: "Value: Faster decisions with clear operational signals.",
     icon: "chart",
   },
   {
     title: "Reporting Automation",
     description:
-      "Automate recurring reports and data refresh workflows so your team is not tied to manual spreadsheet updates.",
-    value: "Value: Fewer manual tasks and more consistent reporting quality.",
-    icon: "devices",
-  },
-  {
-    title: "Mobile Development",
-    description:
-      "Build practical mobile applications for field teams, operations, or customer workflows where mobility matters.",
-    value: "Value: Faster execution on the go and better process adoption.",
-    icon: "mobile",
-  },
-  {
-    title: "Websites and Web Applications",
-    description:
-      "Develop websites and web apps when needed to support customer acquisition, internal workflows, or service delivery.",
-    value: "Value: Stronger digital presence and tools aligned with business goals.",
+      "Automate recurring reporting and scheduled data workflows to reduce manual spreadsheet work and improve consistency.",
+    value: "Value: Lower reporting overhead and higher confidence in numbers.",
     icon: "globe",
+  },
+  {
+    title: "Custom Web and Mobile Applications",
+    description:
+      "Develop supporting web and mobile applications, including iOS, when operations require workflow-specific tools beyond dashboards.",
+    value: "Value: Better system adoption and execution for front-line teams.",
+    icon: "mobile",
   },
 ];
 

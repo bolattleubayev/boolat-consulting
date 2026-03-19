@@ -16,7 +16,7 @@ export default function Home() {
       <WhoWeHelp />
       <ServicesGrid
         title="What we do"
-        description="Data and digital systems that reduce manual work, improve visibility, and support better decisions."
+        description="Data engineering-led consulting across integration, analytics, reporting automation, and supporting applications."
       />
       <ExampleOutcomes />
       <SelectedWork />

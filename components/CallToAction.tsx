@@ -13,11 +13,12 @@ export function CallToAction() {
           <div className="grid gap-10 p-8 sm:p-12 md:grid-cols-12 md:items-center">
             <div className="md:col-span-8">
               <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Ready to fix reporting bottlenecks and improve decisions?
+                Ready to strengthen your data and systems foundation?
               </h2>
               <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-white/80">
-                Tell us where your current process breaks down. We will map a
-                practical first phase your team can implement and use.
+                Share your current data, reporting, and integration challenges.
+                We will define a practical first phase with clear technical and
+                business outcomes.
               </p>
             </div>
             <div className="md:col-span-4 md:flex md:justify-end">
@@ -26,11 +27,11 @@ export function CallToAction() {
                   Book a consultation
                 </ButtonLink>
                 <ButtonLink
-                  href="/dashboards"
+                  href="/case-studies"
                   variant="secondary"
                   className="!bg-white !text-navy border-white/20 hover:!bg-slate-100 hover:!text-navy"
                 >
-                  View demo dashboards
+                  View case studies
                 </ButtonLink>
               </div>
             </div>
@@ -39,15 +40,15 @@ export function CallToAction() {
           <div className="grid gap-6 p-8 text-sm text-white/80 sm:grid-cols-3 sm:p-12">
             <div>
               <div className="font-semibold text-white">Outcome-first</div>
-              <div className="mt-1">Business goals before technical complexity.</div>
+              <div className="mt-1">Business outcomes tied to technical execution.</div>
             </div>
             <div>
-              <div className="font-semibold text-white">Hands-on delivery</div>
-              <div className="mt-1">Build, automate, and document with your team.</div>
+              <div className="font-semibold text-white">Engineering rigor</div>
+              <div className="mt-1">Reliable pipelines, integration, and reporting workflows.</div>
             </div>
             <div>
-              <div className="font-semibold text-white">Long-term clarity</div>
-              <div className="mt-1">Reporting and systems that stay usable at scale.</div>
+              <div className="font-semibold text-white">Operational fit</div>
+              <div className="mt-1">Designed for SME teams, cloud or on-premise.</div>
             </div>
           </div>
         </div>

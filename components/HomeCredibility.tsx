@@ -3,28 +3,28 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const reasons = [
   {
-    title: "Real engineering experience",
-    desc: "Hands-on background in Azure data engineering, pipelines, analytics, and AI/ML projects.",
+    title: "Data engineering depth",
+    desc: "Strong delivery capability across Azure and Databricks pipelines, transformation layers, and analytics-ready data models.",
     icon: "01",
   },
   {
-    title: "Business-focused solutions",
-    desc: "Work starts from business bottlenecks and decision needs, not tools for the sake of tools.",
+    title: "Systems-first approach",
+    desc: "Architecture is designed around data flow, integration reliability, and long-term maintainability for growing businesses.",
     icon: "02",
   },
   {
-    title: "Direct builder communication",
-    desc: "You work directly with the technical founder, which keeps scope clear and delivery fast.",
+    title: "Business-aligned execution",
+    desc: "Engagements are scoped around measurable operational outcomes, reporting speed, and decision quality.",
     icon: "03",
   },
   {
-    title: "Practical systems, no overengineering",
-    desc: "Systems are designed to be maintainable by small teams and useful in day-to-day operations.",
+    title: "Cloud and on-premise support",
+    desc: "Solutions are delivered across mixed environments and integrated with existing systems and constraints.",
     icon: "04",
   },
   {
-    title: "Analytics + product thinking",
-    desc: "Combines reporting depth with startup/product building experience to ship what teams actually use.",
+    title: "Full delivery coverage",
+    desc: "From pipeline engineering to dashboards, reporting automation, and supporting web/mobile applications including iOS.",
     icon: "05",
   },
 ] as const;
@@ -37,8 +37,8 @@ export function HomeCredibility() {
           <div className="lg:col-span-7">
             <SectionHeading
               eyebrow="Why work with us"
-              title="Senior technical execution with practical business judgment."
-              description="We help small and medium businesses improve reporting, operations, and decisions with systems that are clear, useful, and maintainable."
+              title="Serious technical capability for business-critical systems."
+              description="We deliver data and analytics systems that improve reliability, reduce manual process load, and support stronger operational decisions."
             />
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -64,23 +64,23 @@ export function HomeCredibility() {
           <div className="lg:col-span-5">
             <div className="rounded-3xl border border-slate-900/10 bg-surface p-7 shadow-sm shadow-slate-900/5">
               <div className="text-xs font-semibold uppercase tracking-[0.20em] text-navy">
-                Founder-led
+                Delivery model
               </div>
               <h3 className="mt-3 text-xl font-semibold tracking-tight text-slate-950">
-                Bolat
+                Engineering-led consulting team
               </h3>
               <p className="mt-3 text-sm leading-6 text-slate-600">
-                Technical founder with experience in Azure data engineering,
-                data pipelines, analytics, AI/ML work, startup/product building,
-                and practical business systems.
+                Clients work with a focused consulting team that combines data
+                engineering, system integration, and analytics implementation.
+                We keep communication direct and execution accountable.
               </p>
 
               <div className="mt-6 space-y-3 text-sm text-slate-700">
                 {[
-                  "Understands both technical depth and business pressure",
-                  "Balances delivery speed with long-term maintainability",
-                  "Builds with your actual team capacity in mind",
-                  "Keeps communication direct, clear, and actionable",
+                  "Clear technical ownership from architecture to delivery",
+                  "Structured implementation with visible milestones",
+                  "Documentation and handover suitable for internal teams",
+                  "Long-term support aligned to business growth",
                 ].map((point) => (
                   <div key={point} className="flex gap-2">
                     <span className="mt-2 size-1.5 rounded-full bg-navy/80" />

@@ -1,6 +1,5 @@
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
-import { ServicesGrid } from "@/components/ServicesGrid";
 import { CallToAction } from "@/components/CallToAction";
 
 export const metadata = {
@@ -8,29 +7,60 @@ export const metadata = {
 };
 
 export default function ServicesPage() {
+  const supportingServices = [
+    {
+      title: "Data Integration",
+      problem:
+        "Business data is spread across ERP, CRM, finance tools, operational systems, and spreadsheets. Teams spend time reconciling numbers instead of using them.",
+      outcome:
+        "We connect systems into a consistent data flow across cloud and on-premise environments, so reporting and operations run from the same source of truth.",
+    },
+    {
+      title: "Analytics and Dashboards",
+      problem:
+        "Leadership and operations teams lack clear, shared KPI visibility, which slows decisions and creates debate over what is accurate.",
+      outcome:
+        "We build analytics layers and dashboards tied to your business definitions, giving teams fast, reliable visibility into revenue, delivery, costs, and performance.",
+    },
+    {
+      title: "Reporting Automation",
+      problem:
+        "Weekly and monthly reporting depends on manual spreadsheet work, causing delays, repetitive tasks, and inconsistencies.",
+      outcome:
+        "We automate reporting pipelines and refresh schedules so teams spend less time assembling reports and more time acting on insights.",
+    },
+    {
+      title: "Custom Applications (Web and Mobile, including iOS)",
+      problem:
+        "Standard tools do not always fit operational workflows, especially for field teams or process-heavy environments.",
+      outcome:
+        "When needed, we build supporting web and mobile applications, including iOS, to improve workflow execution and adoption around your core data platform.",
+    },
+  ];
+
   return (
     <>
       <section className="border-b border-slate-900/8 bg-white">
         <Container className="py-20 sm:py-24">
           <SectionHeading
             eyebrow="Services"
-            title="Practical data and digital systems for small and medium businesses."
-            description="Choose a focused engagement or combine services into a roadmap that improves reporting, operations, and decision-making."
+            title="Data engineering and integration services for small and medium businesses."
+            description="Our core service is data engineering. We design pipelines, integrate systems, and deliver analytics platforms that improve reporting quality and decision speed."
           />
 
           <div className="mt-10 grid gap-6 rounded-3xl border border-slate-900/10 bg-surface p-6 md:grid-cols-3">
             {[
               {
-                label: "Who we help",
-                value: "SMEs with growing operational complexity",
+                label: "Core technologies",
+                value: "Azure and Databricks",
               },
               {
-                label: "Typical outcomes",
-                value: "Faster reporting and clearer visibility",
+                label: "Core environments",
+                value: "Cloud and on-premise systems",
               },
               {
-                label: "Working model",
-                value: "Founder-led, hands-on implementation",
+                label: "Primary focus",
+                value: "Data pipelines, integration, and analytics reliability",
               },
             ].map((x) => (
               <div
@@ -47,72 +77,74 @@ export default function ServicesPage() {
             ))}
           </div>
 
+          <div className="mt-12 rounded-3xl border border-navy/20 bg-gradient-to-br from-navy/[0.06] via-white to-white p-7 shadow-sm shadow-slate-900/5 sm:p-8">
+            <div className="inline-flex items-center rounded-full bg-navy px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
+              Core service
+            </div>
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+              1. Data Engineering
+            </h2>
+            <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 sm:text-base">
+              We build data pipelines that replace manual reporting and ensure
+              reliable, scalable data for analytics. Delivery is centered on Azure
+              and Databricks, with architecture designed to work across cloud and
+              on-premise environments.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-slate-900/10 bg-white p-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  Business problem
+                </div>
+                <p className="mt-2 text-sm leading-6 text-slate-700">
+                  Reporting is slow and unreliable because source data is fragmented,
+                  transformations are inconsistent, and pipeline ownership is unclear.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-900/10 bg-white p-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  Client outcome
+                </div>
+                <p className="mt-2 text-sm leading-6 text-slate-700">
+                  A dependable data foundation with governed models, predictable
+                  refresh cycles, and trusted numbers for operational and leadership
+                  decisions.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {[
-              {
-                title: "Data Engineering",
-                desc: "Design data flows and models that turn fragmented sources into reliable reporting inputs.",
-                points: [
-                  "Clean pipeline architecture",
-                  "Consistent data definitions",
-                  "Less time spent fixing data issues",
-                ],
-              },
-              {
-                title: "Analytics Dashboards",
-                desc: "Build decision-ready dashboards around the KPIs your leadership team actually uses.",
-                points: [
-                  "Executive and team views",
-                  "KPI alignment",
-                  "Faster, clearer decision cycles",
-                ],
-              },
-              {
-                title: "Reporting Automation",
-                desc: "Replace manual weekly reporting work with automated pipelines and repeatable outputs.",
-                points: [
-                  "Automated refresh and delivery",
-                  "Reduced spreadsheet overhead",
-                  "More time for analysis",
-                ],
-              },
-              {
-                title: "Digital Tools and Apps",
-                desc: "Develop lightweight internal tools, web apps, or mobile workflows to support day-to-day operations.",
-                points: [
-                  "Built around real workflow steps",
-                  "Usable by non-technical teams",
-                  "Improved process consistency",
-                ],
-              },
-            ].map((x) => (
-              <div
-                key={x.title}
+            {supportingServices.map((service, idx) => (
+              <article
+                key={service.title}
                 className="rounded-2xl border border-slate-900/10 bg-white p-6 shadow-sm shadow-slate-900/5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
               >
                 <h3 className="text-lg font-semibold tracking-tight text-slate-950">
-                  {x.title}
+                  {idx + 2}. {service.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{x.desc}</p>
-                <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                  {x.points.map((p) => (
-                    <li key={p} className="flex gap-2">
-                      <span className="mt-2 size-1.5 rounded-full bg-navy/70" />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="mt-4 space-y-4">
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                      Business problem
+                    </div>
+                    <p className="mt-1 text-sm leading-6 text-slate-700">
+                      {service.problem}
+                    </p>
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                      Client outcome
+                    </div>
+                    <p className="mt-1 text-sm leading-6 text-slate-700">
+                      {service.outcome}
+                    </p>
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
         </Container>
       </section>
-
-      <ServicesGrid
-        title="Core capabilities"
-        description="Delivery modules you can combine based on your business priorities."
-        showLink={false}
-      />
 
       <CallToAction />
     </>

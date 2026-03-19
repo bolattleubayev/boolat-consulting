@@ -230,7 +230,7 @@ export default function CaseStudiesPage() {
                           "Rendering and animating a 3D model within a mobile AR experience.",
                       },
                       {
-                        src: "/assets/videos/ar3.MOV",
+                        src: "/assets/videos/ar3.MP4",
                         title: "Object recognition and tracking",
                         caption:
                           "Recognizing, tracking, and maintaining alignment with a physical object as it rotates and moves.",

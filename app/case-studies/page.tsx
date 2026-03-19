@@ -21,23 +21,28 @@ type CaseStudy = {
 const caseStudies: CaseStudy[] = [
   {
     slug: "azure-data-pipelines",
-    title: "Building scalable data pipelines in Azure",
+    title: "Modernizing data infrastructure and replacing legacy BI systems",
     summary:
-      "A large-scale data engineering engagement focused on reliability, traceability, and operational visibility.",
+      "A senior data engineering engagement to replace legacy BI infrastructure, integrate enterprise systems, and deliver measurable operational and financial impact.",
     problem:
-      "The organization had multiple business-critical data sources but reporting was delayed by fragile pipelines, manual intervention, and inconsistent data definitions.",
+      "A legacy business intelligence solution was costly, rigid, and difficult to maintain. Data was spread across multiple systems and required significant manual effort to prepare for reporting.",
     solution:
-      "A scalable Azure-based data pipeline architecture with standardized ingestion, transformation, and quality controls designed for ongoing operational use.",
+      "We designed and implemented a modern data platform that replaced the legacy BI system and enabled scalable data processing and analytics.",
     approach: [
-      "Defined a layered data model (raw, validated, curated) to separate ingestion from business logic.",
-      "Implemented orchestration and monitoring to reduce silent failures and improve recoverability.",
-      "Added data quality checkpoints and lineage conventions so teams could trust and audit outputs.",
-      "Documented operational runbooks to support handover to internal teams.",
+      "Decommissioned a legacy BI platform and replaced it with a modern data stack.",
+      "Integrated data from multiple enterprise sources, including ERP systems (SAP, JD Edwards), SQL Server databases, and external APIs.",
+      "Built data pipelines for ingestion, transformation, and storage.",
+      "Implemented data enrichment and transformation processes using Databricks.",
+      "Applied medallion architecture (bronze, silver, gold layers).",
+      "Implemented Slowly Changing Dimensions (SCD) for historical tracking.",
+      "Established data quality checks and validation processes.",
     ],
     outcome: [
-      "More reliable daily data availability for analytics and reporting.",
-      "Lower operational overhead from pipeline incidents and manual fixes.",
-      "Improved confidence in core business metrics across stakeholders.",
+      "Reduced infrastructure and licensing costs (approximately $250,000 savings).",
+      "Improved reliability and scalability of data pipelines.",
+      "Reduced manual data processing effort.",
+      "Enabled more consistent and accessible reporting.",
+      "Created a foundation for further analytics and data-driven decision making.",
     ],
   },
   {

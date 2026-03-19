@@ -10,40 +10,85 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-white">
-        <Container className="py-16 sm:py-24">
+      <section className="border-b border-slate-900/8 bg-white">
+        <Container className="py-20 sm:py-24">
           <SectionHeading
             eyebrow="Services"
-            title="Consulting engagements that move product, platform, and data forward."
-            description="Pick a focused outcome or combine streams into a pragmatic modernization program."
+            title="Practical data and digital systems for small and medium businesses."
+            description="Choose a focused engagement or combine services into a roadmap that improves reporting, operations, and decision-making."
           />
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-6 rounded-3xl border border-slate-900/10 bg-surface p-6 md:grid-cols-3">
             {[
               {
-                title: "Delivery acceleration",
-                desc: "CI/CD, release readiness, testing strategy, and operational maturity.",
-                points: ["Build pipelines", "Reduce incidents", "Improve lead time"],
+                label: "Who we help",
+                value: "SMEs with growing operational complexity",
               },
               {
-                title: "Platform modernization",
-                desc: "Practical cloud adoption, service boundaries, and reliability patterns.",
-                points: ["Cloud foundations", "Observability", "Cost controls"],
+                label: "Typical outcomes",
+                value: "Faster reporting and clearer visibility",
               },
               {
-                title: "Analytics enablement",
-                desc: "KPI definitions, semantic models, and dashboards for real decision-making.",
-                points: ["KPI design", "Data contracts", "Stakeholder alignment"],
+                label: "Working model",
+                value: "Founder-led, hands-on implementation",
+              },
+            ].map((x) => (
+              <div
+                key={x.label}
+                className="rounded-2xl bg-white p-5 shadow-sm shadow-slate-900/5 ring-1 ring-slate-900/10"
+              >
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  {x.label}
+                </div>
+                <div className="mt-2 text-sm font-medium leading-6 text-slate-800">
+                  {x.value}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {[
+              {
+                title: "Data Engineering",
+                desc: "Design data flows and models that turn fragmented sources into reliable reporting inputs.",
+                points: [
+                  "Clean pipeline architecture",
+                  "Consistent data definitions",
+                  "Less time spent fixing data issues",
+                ],
               },
               {
-                title: "Security improvements",
-                desc: "Shift-left security with secure defaults and measurable coverage.",
-                points: ["Threat modeling", "SAST/DAST", "Secrets management"],
+                title: "Analytics Dashboards",
+                desc: "Build decision-ready dashboards around the KPIs your leadership team actually uses.",
+                points: [
+                  "Executive and team views",
+                  "KPI alignment",
+                  "Faster, clearer decision cycles",
+                ],
+              },
+              {
+                title: "Reporting Automation",
+                desc: "Replace manual weekly reporting work with automated pipelines and repeatable outputs.",
+                points: [
+                  "Automated refresh and delivery",
+                  "Reduced spreadsheet overhead",
+                  "More time for analysis",
+                ],
+              },
+              {
+                title: "Digital Tools and Apps",
+                desc: "Develop lightweight internal tools, web apps, or mobile workflows to support day-to-day operations.",
+                points: [
+                  "Built around real workflow steps",
+                  "Usable by non-technical teams",
+                  "Improved process consistency",
+                ],
               },
             ].map((x) => (
               <div
                 key={x.title}
-                className="rounded-2xl border border-slate-900/10 bg-white p-6"
+                className="rounded-2xl border border-slate-900/10 bg-white p-6 shadow-sm shadow-slate-900/5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
               >
                 <h3 className="text-lg font-semibold tracking-tight text-slate-950">
                   {x.title}
@@ -64,8 +109,8 @@ export default function ServicesPage() {
       </section>
 
       <ServicesGrid
-        title="Capabilities"
-        description="Flexible modules you can mix to fit your roadmap."
+        title="Core capabilities"
+        description="Delivery modules you can combine based on your business priorities."
         showLink={false}
       />
 

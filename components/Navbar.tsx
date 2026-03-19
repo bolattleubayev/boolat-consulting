@@ -5,6 +5,7 @@ import { ButtonLink } from "@/components/Button";
 
 const links = [
   { href: "/services", label: "Services" },
+  { href: "/case-studies", label: "Case Studies" },
   { href: "/dashboards", label: "Dashboards" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -12,8 +13,8 @@ const links = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-900/10 bg-white/70 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-slate-900/8 bg-white/80 backdrop-blur">
+      <Container className="flex h-[4.5rem] items-center justify-between">
         <Link href="/" className="rounded-md focus-visible:outline-none">
           <Logo />
         </Link>
@@ -27,7 +28,7 @@ export function Navbar() {
             >
               <span className="relative">
                 {l.label}
-                <span className="absolute -bottom-2 left-0 h-px w-0 bg-gradient-to-r from-navy/80 to-navy-2/80 transition-all duration-200 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-navy/80 transition-all duration-200 group-hover:w-full" />
               </span>
             </Link>
           ))}

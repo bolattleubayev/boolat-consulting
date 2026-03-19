@@ -6,7 +6,7 @@ function Icon({
   name,
   className = "",
 }: {
-  name: "globe" | "devices" | "database" | "chart";
+  name: "globe" | "devices" | "database" | "chart" | "mobile";
   className?: string;
 }) {
   const common = "size-5";
@@ -123,45 +123,83 @@ function Icon({
           />
         </svg>
       );
+    case "mobile":
+      return (
+        <svg
+          className={`${common} ${className}`}
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <rect
+            x="7"
+            y="2.5"
+            width="10"
+            height="19"
+            rx="2.5"
+            className="stroke-current"
+            strokeWidth="1.8"
+          />
+          <path
+            d="M11 5.8h2"
+            className="stroke-current"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+          <circle cx="12" cy="18.5" r="1" className="fill-current" />
+        </svg>
+      );
   }
 }
 
 type Service = {
   title: string;
   description: string;
-  icon: "globe" | "devices" | "database" | "chart";
+  value: string;
+  icon: "globe" | "devices" | "database" | "chart" | "mobile";
 };
 
 const services: Service[] = [
   {
-    title: "Website Development",
-    description:
-      "Fast, modern marketing sites and web experiences that look great and convert.",
-    icon: "globe",
-  },
-  {
-    title: "Custom Web and Mobile Apps",
-    description:
-      "Purpose-built apps to streamline operations, delight customers, and scale with you.",
-    icon: "devices",
-  },
-  {
     title: "Data Engineering",
     description:
-      "Reliable pipelines and clean data models that turn scattered sources into trusted data.",
+      "Build reliable data pipelines and structured datasets that remove bottlenecks in reporting and operations.",
+    value: "Value: Less time fixing data issues, more time acting on insights.",
     icon: "database",
   },
   {
-    title: "Analytics & Dashboards",
+    title: "Analytics Dashboards",
     description:
-      "Decision-ready reporting with clear KPIs, definitions, and drill-downs your team can use.",
+      "Create clear KPI dashboards for owners and managers to track revenue, costs, delivery, and growth in one place.",
+    value: "Value: Better visibility for faster, more confident decisions.",
     icon: "chart",
+  },
+  {
+    title: "Reporting Automation",
+    description:
+      "Automate recurring reports and data refresh workflows so your team is not tied to manual spreadsheet updates.",
+    value: "Value: Fewer manual tasks and more consistent reporting quality.",
+    icon: "devices",
+  },
+  {
+    title: "Mobile Development",
+    description:
+      "Build practical mobile applications for field teams, operations, or customer workflows where mobility matters.",
+    value: "Value: Faster execution on the go and better process adoption.",
+    icon: "mobile",
+  },
+  {
+    title: "Websites and Web Applications",
+    description:
+      "Develop websites and web apps when needed to support customer acquisition, internal workflows, or service delivery.",
+    value: "Value: Stronger digital presence and tools aligned with business goals.",
+    icon: "globe",
   },
 ];
 
 export function ServicesGrid({
-  title = "Services",
-  description = "Focused consulting engagements that move key metrics.",
+  title = "What we do",
+  description = "We build systems that reduce manual work, improve visibility, and support better business decisions.",
   showLink = true,
 }: {
   title?: string;
@@ -169,12 +207,8 @@ export function ServicesGrid({
   showLink?: boolean;
 }) {
   return (
-    <section className="relative overflow-hidden bg-white">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[22rem] bg-[radial-gradient(circle_at_top,rgba(18,59,122,0.12),transparent_55%)]"
-      />
-      <Container className="py-16 sm:py-28">
+    <section className="border-b border-slate-900/8 bg-white">
+      <Container className="py-20 sm:py-24">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading
             eyebrow="What we do"
@@ -191,16 +225,12 @@ export function ServicesGrid({
           ) : null}
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <div
               key={s.title}
-              className="group relative rounded-2xl border border-slate-900/10 bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_45px_rgba(15,23,42,0.10)]"
+              className="group relative flex h-full flex-col rounded-2xl border border-slate-900/10 bg-white p-6 shadow-sm shadow-slate-900/5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(15,23,42,0.08)]"
             >
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 rounded-2xl bg-[linear-gradient(140deg,rgba(11,31,68,0.05),transparent_35%,rgba(18,59,122,0.06))] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-              />
               <div className="flex items-start justify-between gap-4">
                 <div className="inline-flex size-11 items-center justify-center rounded-2xl bg-surface text-navy ring-1 ring-slate-900/10 transition-colors group-hover:bg-navy group-hover:text-white">
                   <Icon name={s.icon} />
@@ -215,9 +245,10 @@ export function ServicesGrid({
               <p className="mt-3 text-sm leading-6 text-slate-600">
                 {s.description}
               </p>
-              <div className="mt-5 h-px w-full bg-slate-900/10" />
-              <div className="mt-4 text-sm font-medium text-navy">
-                Learn more
+              <p className="mt-4 text-sm leading-6 text-slate-700">{s.value}</p>
+              <div className="mt-auto pt-5">
+                <div className="h-px w-full bg-slate-900/10" />
+                <div className="mt-4 text-sm font-medium text-navy">Learn more</div>
               </div>
             </div>
           ))}

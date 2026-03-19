@@ -2,12 +2,25 @@ import { Hero } from "@/components/Hero";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { ProcessSection } from "@/components/ProcessSection";
 import { CallToAction } from "@/components/CallToAction";
+import { HomeCredibility } from "@/components/HomeCredibility";
+import { ProblemsWeSolve } from "@/components/ProblemsWeSolve";
+import { WhoWeHelp } from "@/components/WhoWeHelp";
+import { ExampleOutcomes } from "@/components/ExampleOutcomes";
+import { SelectedWork } from "@/components/SelectedWork";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <ServicesGrid />
+      <ProblemsWeSolve />
+      <WhoWeHelp />
+      <ServicesGrid
+        title="What we do"
+        description="Data and digital systems that reduce manual work, improve visibility, and support better decisions."
+      />
+      <ExampleOutcomes />
+      <SelectedWork />
+      <HomeCredibility />
       <ProcessSection />
       <CallToAction />
     </>

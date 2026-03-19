@@ -8,7 +8,7 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-gradient-to-r from-navy to-navy-2 text-white shadow-sm shadow-slate-900/10 hover:shadow-md hover:shadow-slate-900/15",
+    "bg-navy text-white shadow-sm shadow-slate-900/10 hover:bg-navy-2 hover:shadow-md hover:shadow-slate-900/15",
   secondary:
     "bg-white text-slate-950 ring-1 ring-slate-900/10 shadow-sm shadow-slate-900/5 hover:bg-slate-50 hover:shadow-md hover:shadow-slate-900/10",
 };

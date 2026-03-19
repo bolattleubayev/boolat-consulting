@@ -4,7 +4,7 @@ import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-900/10 bg-white">
+    <footer className="bg-slate-50">
       <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-5">
@@ -32,6 +32,11 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link className="hover:text-slate-950" href="/case-studies">
+                    Case Studies
+                  </Link>
+                </li>
+                <li>
                   <Link className="hover:text-slate-950" href="/contact">
                     Contact
                   </Link>
@@ -51,7 +56,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link className="hover:text-slate-950" href="/services">
-                    Cloud & DevOps
+                    Reporting Automation
                   </Link>
                 </li>
                 <li>

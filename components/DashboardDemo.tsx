@@ -43,7 +43,7 @@ function ChartCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-3xl border border-slate-900/10 bg-white p-6">
+    <div className="rounded-3xl border border-slate-900/10 bg-white p-6 shadow-sm shadow-slate-900/5">
       <div className="flex items-center justify-between gap-6">
         <div>
           <div className="text-sm font-semibold text-slate-950">{title}</div>

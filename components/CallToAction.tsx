@@ -1,5 +1,6 @@
 import { Container } from "@/components/Container";
 import { ButtonLink } from "@/components/Button";
+import { Trans } from "@/components/Trans";
 
 export function CallToAction() {
   return (
@@ -13,25 +14,35 @@ export function CallToAction() {
           <div className="grid gap-10 p-8 sm:p-12 md:grid-cols-12 md:items-center">
             <div className="md:col-span-8">
               <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Ready to strengthen your data and systems foundation?
+                <Trans
+                  en="Ready to strengthen your data and systems foundation?"
+                  ru="Готовы укрепить основу данных и систем?"
+                  kk="Дерек пен жүйе негізін күшейтуге дайынсыз ба?"
+                />
               </h2>
               <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-white/80">
-                Share your current data, reporting, and integration challenges.
-                We will define a practical first phase with clear technical and
-                business outcomes.
+                <Trans
+                  en="Share your current data, reporting, and integration challenges. We will define a practical first phase with clear technical and business outcomes."
+                  ru="Расскажите о текущих задачах с данными, отчётностью и интеграциями. Мы определим практичную первую фазу с понятными техническими и бизнес-результатами."
+                  kk="Қазіргі дерек, есептілік және интеграция қиындықтарыңызды бөлісіңіз. Біз техникалық және бизнес нәтижелері анық болатын практикалық алғашқы кезеңді анықтаймыз."
+                />
               </p>
             </div>
             <div className="md:col-span-4 md:flex md:justify-end">
               <div className="flex flex-col gap-3 sm:flex-row md:flex-col md:items-end">
                 <ButtonLink href="/contact" variant="secondary">
-                  Book a consultation
+                  <Trans
+                    en="Book a consultation"
+                    ru="Записаться на консультацию"
+                    kk="Консультацияға жазылу"
+                  />
                 </ButtonLink>
                 <ButtonLink
                   href="/case-studies"
                   variant="secondary"
                   className="!bg-white !text-navy border-white/20 hover:!bg-slate-100 hover:!text-navy"
                 >
-                  View case studies
+                  <Trans en="View case studies" ru="Смотреть кейсы" kk="Жобаларды көру" />
                 </ButtonLink>
               </div>
             </div>
@@ -39,16 +50,40 @@ export function CallToAction() {
           <div className="h-px bg-white/10" />
           <div className="grid gap-6 p-8 text-sm text-white/80 sm:grid-cols-3 sm:p-12">
             <div>
-              <div className="font-semibold text-white">Outcome-first</div>
-              <div className="mt-1">Business outcomes tied to technical execution.</div>
+                <div className="font-semibold text-white">
+                  <Trans en="Outcome-first" ru="Сначала результат" kk="Нәтиже бірінші" />
+                </div>
+                <div className="mt-1">
+                  <Trans
+                    en="Business outcomes tied to technical execution."
+                    ru="Бизнес-результаты связаны с техническим исполнением."
+                    kk="Бизнес нәтижелері техникалық іске асырумен тығыз байланысты."
+                  />
+                </div>
             </div>
             <div>
-              <div className="font-semibold text-white">Engineering rigor</div>
-              <div className="mt-1">Reliable pipelines, integration, and reporting workflows.</div>
+                <div className="font-semibold text-white">
+                  <Trans en="Engineering rigor" ru="Инженерная строгость" kk="Инженерлік қатаңдық" />
+                </div>
+                <div className="mt-1">
+                  <Trans
+                    en="Reliable pipelines, integration, and reporting workflows."
+                    ru="Надёжные конвейеры, интеграции и рабочие процессы отчётности."
+                    kk="Сенімді конвейерлер, интеграциялар және есептілік процестері."
+                  />
+                </div>
             </div>
             <div>
-              <div className="font-semibold text-white">Operational fit</div>
-              <div className="mt-1">Designed for SME teams, cloud or on-premise.</div>
+                <div className="font-semibold text-white">
+                  <Trans en="Operational fit" ru="Ориентация на операции" kk="Операцияға бейімделу" />
+                </div>
+                <div className="mt-1">
+                  <Trans
+                    en="Designed for SME teams, cloud or on-premise."
+                    ru="Создано для команд SMB: и в облаке, и в on-premise."
+                    kk="ШОБ командалары үшін жасалған: бұлтта да, on-premise ортада да."
+                  />
+                </div>
             </div>
           </div>
         </div>

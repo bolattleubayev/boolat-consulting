@@ -14,10 +14,7 @@ export default function Home() {
       <Hero />
       <ProblemsWeSolve />
       <WhoWeHelp />
-      <ServicesGrid
-        title="What we do"
-        description="Data engineering-led consulting across integration, analytics, reporting automation, and supporting applications."
-      />
+      <ServicesGrid />
       <ExampleOutcomes />
       <SelectedWork />
       <HomeCredibility />

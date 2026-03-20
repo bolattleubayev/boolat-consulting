@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useRef } from "react";
 import { submitContact } from "@/app/contact/actions";
+import { useLang } from "@/components/LanguageContext";
 
 function Input({
   label,
@@ -34,6 +35,7 @@ function Input({
 }
 
 export function ContactForm() {
+  const { lang } = useLang();
   const [state, action, pending] = useActionState(submitContact, null);
   const formRef = useRef<HTMLFormElement | null>(null);
 
@@ -44,25 +46,67 @@ export function ContactForm() {
   return (
     <form ref={formRef} action={action} className="mt-8 space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
-        <Input label="Name" name="name" placeholder="Jane Doe" required />
         <Input
-          label="Email"
+          label={
+            lang === "ru" ? "Имя" : lang === "kk" ? "Атыңыз" : "Name"
+          }
+          name="name"
+          placeholder={
+            lang === "ru"
+              ? "Иван Иванов"
+              : lang === "kk"
+                ? "Иван Иванов"
+                : "Jane Doe"
+          }
+          required
+        />
+        <Input
+          label={
+            lang === "ru"
+              ? "Email"
+              : lang === "kk"
+                ? "Электрондық пошта"
+                : "Email"
+          }
           name="email"
-          placeholder="jane@company.com"
+          placeholder={
+            lang === "ru"
+              ? "name@company.com"
+              : lang === "kk"
+                ? "name@company.com"
+                : "jane@company.com"
+          }
           type="email"
           required
         />
       </div>
-      <Input label="Company" name="company" placeholder="Company Inc." />
+      <Input
+        label={lang === "ru" ? "Компания" : lang === "kk" ? "Компания" : "Company"}
+        name="company"
+        placeholder={
+          lang === "ru" ? "Компания" : lang === "kk" ? "Компания" : "Company Inc."
+        }
+      />
 
       <label className="block">
         <span className="text-sm font-medium text-slate-700">
-          Project description<span className="text-slate-400"> *</span>
+          {lang === "ru"
+            ? "Описание проекта"
+            : lang === "kk"
+              ? "Жобаның сипаттамасы"
+              : "Project description"}
+          <span className="text-slate-400"> *</span>
         </span>
         <textarea
           name="projectDescription"
           required
-          placeholder="A short description of goals, timeline, and constraints."
+          placeholder={
+            lang === "ru"
+              ? "Коротко опишите цели, сроки и ограничения."
+              : lang === "kk"
+                ? "Мақсаттарыңыз, мерзіміңіз және шектеулеріңізді қысқаша сипаттаңыз."
+                : "A short description of goals, timeline, and constraints."
+          }
           rows={6}
           className="mt-2 w-full resize-none rounded-2xl border border-slate-900/10 bg-white px-4 py-3 text-sm text-slate-950 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/25"
         />
@@ -74,7 +118,17 @@ export function ContactForm() {
           disabled={pending}
           className="inline-flex w-full items-center justify-center rounded-full bg-navy px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-navy-2 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/30 sm:w-auto"
         >
-          {pending ? "Sending..." : "Send message"}
+          {pending
+            ? lang === "ru"
+              ? "Отправка..."
+              : lang === "kk"
+                ? "Жіберілуде..."
+                : "Sending..."
+            : lang === "ru"
+              ? "Отправить сообщение"
+              : lang === "kk"
+                ? "Хабарлама жіберу"
+                : "Send message"}
         </button>
 
         {state?.message ? (
@@ -90,7 +144,11 @@ export function ContactForm() {
       </div>
 
       <p className="text-xs text-slate-500">
-        By sending, you agree to be contacted about your inquiry.
+        {lang === "ru"
+          ? "Отправляя форму, вы соглашаетесь на связь по вашему запросу."
+          : lang === "kk"
+            ? "Жіберу арқылы сұрағыңыз бойынша хабарласуға келісесіз."
+            : "By sending, you agree to be contacted about your inquiry."}
       </p>
     </form>
   );

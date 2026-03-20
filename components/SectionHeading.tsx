@@ -6,7 +6,7 @@ export function SectionHeading({
   description,
   align = "left",
 }: {
-  eyebrow?: string;
+  eyebrow?: ReactNode;
   title: ReactNode;
   description?: ReactNode;
   align?: "left" | "center";

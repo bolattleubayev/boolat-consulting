@@ -21,28 +21,28 @@ type CaseStudy = {
 const caseStudies: CaseStudy[] = [
   {
     slug: "azure-data-pipelines",
-    title: "Modernizing data infrastructure and replacing legacy BI systems",
+    title: "Replacing a legacy BI system and building a modern data platform",
     summary:
-      "A senior data engineering engagement to replace legacy BI infrastructure, integrate enterprise systems, and deliver measurable operational and financial impact.",
+      "A data platform modernization engagement focused on replacing legacy BI, integrating fragmented enterprise data, and improving reporting reliability at scale.",
     problem:
-      "A legacy business intelligence solution was costly, rigid, and difficult to maintain. Data was spread across multiple systems and required significant manual effort to prepare for reporting.",
+      "A legacy business intelligence solution was expensive to maintain, inflexible, and required significant manual effort to prepare data for reporting. Data was fragmented across multiple enterprise systems, including ERP platforms, databases, and external APIs, making it difficult to produce reliable and consistent insights.",
     solution:
-      "We designed and implemented a modern data platform that replaced the legacy BI system and enabled scalable data processing and analytics.",
+      "We designed and implemented a modern data platform that replaced the legacy BI system and unified data across the organization.",
     approach: [
-      "Decommissioned a legacy BI platform and replaced it with a modern data stack.",
-      "Integrated data from multiple enterprise sources, including ERP systems (SAP, JD Edwards), SQL Server databases, and external APIs.",
-      "Built data pipelines for ingestion, transformation, and storage.",
-      "Implemented data enrichment and transformation processes using Databricks.",
+      "Decommissioned a legacy BI solution and replaced it with a modern data architecture.",
+      "Integrated data from multiple enterprise systems, including SAP, JD Edwards, SQL Server databases, and external APIs.",
+      "Built scalable data pipelines for ingestion, transformation, and storage.",
+      "Implemented data enrichment and transformation using Databricks.",
       "Applied medallion architecture (bronze, silver, gold layers).",
       "Implemented Slowly Changing Dimensions (SCD) for historical tracking.",
       "Established data quality checks and validation processes.",
     ],
     outcome: [
-      "Reduced infrastructure and licensing costs (approximately $250,000 savings).",
-      "Improved reliability and scalability of data pipelines.",
-      "Reduced manual data processing effort.",
-      "Enabled more consistent and accessible reporting.",
-      "Created a foundation for further analytics and data-driven decision making.",
+      "Reduced infrastructure and licensing costs by approximately $250,000.",
+      "Replaced a rigid legacy reporting system with a scalable data platform.",
+      "Reduced manual data preparation effort.",
+      "Improved consistency and reliability of reporting.",
+      "Enabled a foundation for future analytics and decision-making.",
     ],
   },
   {
@@ -203,6 +203,176 @@ export default function CaseStudiesPage() {
                     A prototype interface for a multi-source health data system with
                     analytics and AI-assisted interpretation.
                   </p>
+                </div>
+              ) : null}
+
+              {study.slug === "azure-data-pipelines" ? (
+                <div className="mt-6 rounded-2xl border border-slate-900/10 bg-white p-5 shadow-sm shadow-slate-900/5">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Architecture overview
+                  </div>
+                  <div className="mt-4 rounded-xl border border-slate-900/10 bg-slate-50 p-4 sm:p-5">
+                    <div className="grid gap-3 md:grid-cols-5 md:items-center">
+                      <div className="rounded-lg border border-slate-900/10 bg-white p-3 text-center shadow-sm shadow-slate-900/5 md:col-span-1">
+                        <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-navy">
+                          Sources
+                        </div>
+                        <div className="mt-2 text-xs leading-5 text-slate-700">
+                          SAP
+                          <br />
+                          JD Edwards
+                          <br />
+                          SQL Server
+                          <br />
+                          APIs
+                        </div>
+                      </div>
+
+                      <div className="hidden justify-center md:flex">
+                        <span className="text-lg font-semibold text-navy">→</span>
+                      </div>
+                      <div className="flex justify-center md:hidden">
+                        <span className="text-lg font-semibold text-navy">↓</span>
+                      </div>
+
+                      <div className="rounded-lg border border-slate-900/10 bg-white p-3 text-center shadow-sm shadow-slate-900/5 md:col-span-1">
+                        <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-navy">
+                          Ingestion
+                        </div>
+                        <div className="mt-2 text-xs leading-5 text-slate-700">
+                          Batch + API pipelines
+                        </div>
+                      </div>
+
+                      <div className="hidden justify-center md:flex">
+                        <span className="text-lg font-semibold text-navy">→</span>
+                      </div>
+                      <div className="flex justify-center md:hidden">
+                        <span className="text-lg font-semibold text-navy">↓</span>
+                      </div>
+
+                      <div className="rounded-lg border border-slate-900/10 bg-white p-3 text-center shadow-sm shadow-slate-900/5 md:col-span-1">
+                        <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-navy">
+                          Databricks
+                        </div>
+                        <div className="mt-2 text-xs leading-5 text-slate-700">
+                          Processing + enrichment
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="my-3 flex justify-center">
+                      <span className="text-lg font-semibold text-navy">↓</span>
+                    </div>
+
+                    <div className="rounded-lg border border-navy/20 bg-[#f4f8ff] p-3 text-center shadow-sm shadow-slate-900/5">
+                      <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-navy">
+                        Medallion architecture
+                      </div>
+                      <div className="mt-2 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-700">
+                        <span className="rounded-md border border-slate-900/10 bg-white px-2.5 py-1">
+                          Bronze
+                        </span>
+                        <span className="text-navy">→</span>
+                        <span className="rounded-md border border-slate-900/10 bg-white px-2.5 py-1">
+                          Silver
+                        </span>
+                        <span className="text-navy">→</span>
+                        <span className="rounded-md border border-slate-900/10 bg-white px-2.5 py-1">
+                          Gold
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="my-3 flex justify-center">
+                      <span className="text-lg font-semibold text-navy">↓</span>
+                    </div>
+
+                    <div className="rounded-lg border border-slate-900/10 bg-white p-3 text-center shadow-sm shadow-slate-900/5">
+                      <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-navy">
+                        Analytics / reporting
+                      </div>
+                      <div className="mt-2 text-xs leading-5 text-slate-700">
+                        Consistent metrics and operational reporting
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+
+              {study.slug === "azure-data-pipelines" ? (
+                <div className="mt-6 rounded-2xl border border-slate-900/10 bg-white p-5 shadow-sm shadow-slate-900/5">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    KPI impact
+                  </div>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                    {[
+                      { value: "~$250k", label: "Cost savings" },
+                      { value: "4+", label: "Enterprise systems integrated" },
+                      { value: "Lower", label: "Manual reporting effort" },
+                      { value: "Higher", label: "Data reliability" },
+                    ].map((kpi) => (
+                      <div
+                        key={kpi.label}
+                        className="rounded-xl border border-slate-900/10 bg-slate-50 p-4"
+                      >
+                        <div className="text-2xl font-semibold tracking-tight text-navy">
+                          {kpi.value}
+                        </div>
+                        <div className="mt-1 text-sm leading-6 text-slate-700">
+                          {kpi.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              {study.slug === "azure-data-pipelines" ? (
+                <div className="mt-6 rounded-2xl border border-slate-900/10 bg-white p-5 shadow-sm shadow-slate-900/5">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Before vs after
+                  </div>
+                  <div className="mt-4 grid gap-4 md:grid-cols-2">
+                    <div className="rounded-xl border border-slate-900/10 bg-slate-50 p-4">
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-700">
+                        Before
+                      </h3>
+                      <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700">
+                        {[
+                          "Legacy BI system",
+                          "Fragmented data sources",
+                          "Manual reporting effort",
+                          "High infrastructure and licensing cost",
+                        ].map((item) => (
+                          <li key={item} className="flex gap-2">
+                            <span className="mt-2 size-1.5 rounded-full bg-slate-500/70" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="rounded-xl border border-navy/20 bg-[#f4f8ff] p-4">
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-navy">
+                        After
+                      </h3>
+                      <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700">
+                        {[
+                          "Modern data platform",
+                          "Integrated data sources",
+                          "Automated pipelines",
+                          "Reduced costs (~$250k)",
+                          "Reliable and scalable reporting",
+                        ].map((item) => (
+                          <li key={item} className="flex gap-2">
+                            <span className="mt-2 size-1.5 rounded-full bg-navy/75" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               ) : null}
 

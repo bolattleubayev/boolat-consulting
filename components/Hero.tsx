@@ -55,35 +55,37 @@ export function Hero() {
                     Operations snapshot
                   </div>
                   <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-medium text-emerald-700">
-                    Live demo
+                    Case study data
                   </span>
                 </div>
                 <div className="mt-4 grid grid-cols-2 gap-4">
                   <div className="rounded-xl border border-slate-900/10 p-4">
-                    <div className="text-sm font-medium text-slate-600">Revenue</div>
-                    <div className="mt-2 text-2xl font-semibold text-slate-950">$248k</div>
-                    <div className="mt-1 text-xs text-emerald-700">+12.4% MoM</div>
+                    <div className="text-sm font-medium text-slate-600">Cost savings</div>
+                    <div className="mt-2 text-2xl font-semibold text-slate-950">~$250k</div>
+                    <div className="mt-1 text-xs text-emerald-700">Infra + licensing</div>
                   </div>
                   <div className="rounded-xl border border-slate-900/10 p-4">
-                    <div className="text-sm font-medium text-slate-600">Orders</div>
-                    <div className="mt-2 text-2xl font-semibold text-slate-950">1,685</div>
-                    <div className="mt-1 text-xs text-emerald-700">+6.2% MoM</div>
+                    <div className="text-sm font-medium text-slate-600">Integrated sources</div>
+                    <div className="mt-2 text-2xl font-semibold text-slate-950">4+</div>
+                    <div className="mt-1 text-xs text-emerald-700">ERP, SQL, APIs</div>
                   </div>
                   <div className="col-span-2 rounded-xl border border-slate-900/10 p-4">
-                    <div className="text-sm font-medium text-slate-600">Pipeline health</div>
+                    <div className="text-sm font-medium text-slate-600">
+                      Reporting reliability
+                    </div>
                     <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-slate-100">
-                      <div className="h-full w-4/5 rounded-full bg-navy" />
+                      <div className="h-full w-[92%] rounded-full bg-navy" />
                     </div>
                     <div className="mt-2 flex justify-between text-xs text-slate-500">
-                      <span>Stable</span>
-                      <span>99.2% success</span>
+                      <span>Manual effort reduced</span>
+                      <span>Scalable platform</span>
                     </div>
                   </div>
                 </div>
               </div>
               <p className="mt-4 px-1 text-xs leading-5 text-slate-500">
-                Built for leadership visibility: finance, operations, and delivery metrics
-                in one place.
+                Snapshot based on legacy BI modernization outcomes from the Azure
+                data engineering case study.
               </p>
             </div>
           </div>

@@ -7,6 +7,7 @@ import { ProblemsWeSolve } from "@/components/ProblemsWeSolve";
 import { WhoWeHelp } from "@/components/WhoWeHelp";
 import { ExampleOutcomes } from "@/components/ExampleOutcomes";
 import { SelectedWork } from "@/components/SelectedWork";
+import { HomeAIWorkflows } from "@/components/HomeAIWorkflows";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <ProblemsWeSolve />
       <WhoWeHelp />
       <ServicesGrid />
+      <HomeAIWorkflows />
       <ExampleOutcomes />
       <SelectedWork />
       <HomeCredibility />

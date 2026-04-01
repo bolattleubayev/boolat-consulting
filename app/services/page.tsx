@@ -237,6 +237,98 @@ export default function ServicesPage() {
               </article>
             ))}
           </div>
+
+          <div className="mt-16 rounded-3xl border border-slate-900/10 bg-white p-7 shadow-sm shadow-slate-900/5 sm:p-8">
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-navy">
+              <Trans
+                en="Extension of data engineering"
+                ru="Продолжение инжиниринга данных"
+                kk="Дерек инжинирингінің жалғасы"
+              />
+            </div>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+              <Trans
+                en="AI-powered workflows and agents"
+                ru="AI‑рабочие процессы и агенты"
+                kk="AI‑жұмыс процестері және агенттер"
+              />
+            </h2>
+            <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-600 sm:text-base">
+              <Trans
+                en="We build AI-powered systems that work on top of your data infrastructure to automate workflows, generate insights, and support business operations."
+                ru="Мы создаём AI‑системы поверх вашей инфраструктуры данных: автоматизируем процессы, получаем инсайты и поддерживаем бизнес‑операции."
+                kk="Біз дерек инфрақұрылымыңыздың үстіне AI‑жүйелерін құрамыз: процестерді автоматтандырамыз, инсайттар береміз және бизнес‑операцияларды қолдаймыз."
+              />
+            </p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600 sm:text-base">
+              <Trans
+                en="AI relies on clean, integrated data. Our work starts with pipelines, governance, and reliable connectors so these systems remain accurate, traceable, and safe to operate."
+                ru="AI опирается на чистые и интегрированные данные. Мы начинаем с конвейеров, управления данными и надёжных интеграций, чтобы такие системы оставались точными, прозрачными и безопасными в эксплуатации."
+                kk="AI таза әрі интеграцияланған деректерге сүйенеді. Біз конвейерлерден, деректерді басқарудан және сенімді интеграциялардан бастаймыз — сондықтан мұндай жүйелер дәл, қадағаланатын әрі қауіпсіз жұмыс істейді."
+              />
+            </p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {[
+                {
+                  titleEn: "Data-driven assistants",
+                  titleRu: "Ассистенты на основе данных",
+                  titleKk: "Дерекке негізделген ассистенттер",
+                  descEn:
+                    "AI agents that interact with your internal data, allowing teams to query information, generate reports, and access insights through natural language.",
+                  descRu:
+                    "AI‑агенты, которые работают с вашими внутренними данными: команды могут задавать вопросы, формировать отчёты и получать инсайты на естественном языке.",
+                  descKk:
+                    "Ішкі деректеріңізбен әрекеттесетін AI агенттері: командалар табиғи тілде сұрау салып, есептерді жасап, инсайттарға қол жеткізеді.",
+                },
+                {
+                  titleEn: "Workflow automation",
+                  titleRu: "Автоматизация процессов",
+                  titleKk: "Процестерді автоматтандыру",
+                  descEn:
+                    "Automating repetitive business processes using AI, such as generating reports, summarizing data, or triggering actions based on data events.",
+                  descRu:
+                    "Автоматизация повторяющихся процессов с помощью AI: генерация отчётов, сводки по данным или запуск действий по событиям в данных.",
+                  descKk:
+                    "AI арқылы қайталанатын бизнес процестерді автоматтандыру: есептерді жасау, деректерді қысқаша түйіндеу немесе дерек оқиғаларына қарай әрекет іске қосу.",
+                },
+                {
+                  titleEn: "Decision support systems",
+                  titleRu: "Системы поддержки решений",
+                  titleKk: "Шешім қабылдауды қолдау жүйелері",
+                  descEn:
+                    "Combining structured data with AI models to provide recommendations and assist decision-making processes.",
+                  descRu:
+                    "Совмещаем структурированные данные и AI‑модели, чтобы давать рекомендации и поддерживать процессы принятия решений.",
+                  descKk:
+                    "Ұсынымдар беру және шешім қабылдау процестерін қолдау үшін құрылымды деректерді AI модельдерімен біріктіреміз.",
+                },
+                {
+                  titleEn: "Integration with existing systems",
+                  titleRu: "Интеграция с существующими системами",
+                  titleKk: "Қолданыстағы жүйелермен интеграция",
+                  descEn:
+                    "Connecting AI capabilities with your current tools, databases, and APIs.",
+                  descRu:
+                    "Подключаем AI‑возможности к вашим текущим инструментам, базам данных и API.",
+                  descKk:
+                    "AI мүмкіндіктерін қолданыстағы құралдарыңызға, дерекқорларға және API‑лерге қосамыз.",
+                },
+              ].map((item) => (
+                <article
+                  key={item.titleEn}
+                  className="rounded-2xl border border-slate-900/10 bg-surface p-5"
+                >
+                  <h3 className="text-sm font-semibold text-slate-950">
+                    <Trans en={item.titleEn} ru={item.titleRu} kk={item.titleKk} />
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    <Trans en={item.descEn} ru={item.descRu} kk={item.descKk} />
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
         </Container>
       </section>
 

@@ -32,9 +32,9 @@ export function Hero() {
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-600">
               <Trans
-                en="We design and build data pipelines, integrate business systems, and develop analytics platforms for small and medium businesses across cloud and on-premise environments."
-                ru="Мы проектируем и создаём конвейеры данных, интегрируем бизнес‑системы и разрабатываем аналитические платформы для малого и среднего бизнеса в облаке и on-premise среде."
-                kk="Біз деректер конвейерлерін жобалап, құрып, бизнес‑жүйелерді біріктіріп, шағын және орта бизнес үшін бұлтта да, on‑premise ортада да аналитикалық платформалар жасаймыз."
+                en="We design and build data pipelines, integrate business systems, and develop analytics platforms and AI products on top of your data infrastructure across cloud and on-premise environments."
+                ru="Мы проектируем и создаём конвейеры данных, интегрируем бизнес‑системы и разрабатываем аналитические платформы и AI‑продукты поверх вашей инфраструктуры данных — в облаке и on‑premise среде."
+                kk="Біз деректер конвейерлерін жобалап, құрып, бизнес‑жүйелерді біріктіріп, бұлтта да, on‑premise ортада да дерек инфрақұрылымыңыздың үстіне аналитикалық платформалар мен AI өнімдерін жасаймыз."
               />
             </p>
 

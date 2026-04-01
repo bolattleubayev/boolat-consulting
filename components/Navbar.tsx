@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
 import { ButtonLink } from "@/components/Button";
 import { useLang } from "@/components/LanguageContext";
+import { Trans } from "@/components/Trans";
 
 const links = [
   { href: "/services", en: "Services", ru: "Услуги", kk: "Қызметтер" },
@@ -38,6 +39,15 @@ export function Navbar() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const prev = document.body.style.overflow;
+    if (open) document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-slate-900/8 bg-white/80 backdrop-blur relative">
       <Container className="flex h-[4.5rem] items-center justify-between">
@@ -60,12 +70,13 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4 md:gap-6">
           <button
             type="button"
-            className="inline-flex size-10 items-center justify-center rounded-full bg-white text-slate-950 ring-1 ring-slate-900/10 shadow-sm shadow-slate-900/5 transition-colors hover:bg-slate-50 md:hidden"
-            aria-label="Open menu"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white text-slate-950 ring-1 ring-slate-900/10 shadow-sm shadow-slate-900/5 transition-colors hover:bg-slate-50 md:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
           >
             {open ? (
@@ -168,46 +179,112 @@ export function Navbar() {
             </button>
           </div>
 
-          <ButtonLink href="/contact" variant="primary">
+          <ButtonLink href="/contact" variant="primary" className="hidden md:inline-flex">
             {lang === "ru"
               ? "Связаться"
               : lang === "kk"
                 ? "Байланысу"
                 : "Get in touch"}
           </ButtonLink>
-
-          <button
-            type="button"
-            className="inline-flex size-10 items-center justify-center rounded-full bg-white text-slate-950 ring-1 ring-slate-900/10 shadow-sm shadow-slate-900/5 transition-colors hover:bg-slate-50 md:hidden"
-            aria-label="Switch language"
-            onClick={() => {
-              if (lang === "en") return setLang("ru");
-              if (lang === "ru") return setLang("kk");
-              return setLang("en");
-            }}
-          >
-            <span className="text-xs font-semibold">
-              {lang === "ru" ? "RU" : lang === "kk" ? "KK" : "EN"}
-            </span>
-          </button>
         </div>
       </Container>
 
       {open ? (
-        <div className="absolute left-0 top-full w-full border-b border-slate-900/10 bg-white/95 backdrop-blur">
-          <Container className="py-4">
-            <nav className="flex flex-col gap-3">
+        <div
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label={
+            lang === "ru"
+              ? "Меню"
+              : lang === "kk"
+                ? "Мәзір"
+                : "Site menu"
+          }
+          className="absolute left-0 top-full max-h-[min(85vh,calc(100dvh-4.5rem))] w-full overflow-y-auto border-b border-slate-900/10 bg-white/95 shadow-lg shadow-slate-900/10 backdrop-blur md:hidden"
+        >
+          <Container className="py-6">
+            <nav className="flex flex-col gap-1" aria-label="Primary">
               {links.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-3 py-2 text-sm font-medium text-slate-800 ring-1 ring-slate-900/10 transition-colors hover:bg-slate-50"
+                  className="rounded-xl px-4 py-3 text-base font-medium text-slate-800 transition-colors hover:bg-slate-50"
                 >
                   {lang === "ru" ? l.ru : lang === "kk" ? l.kk : l.en}
                 </Link>
               ))}
             </nav>
+
+            <div className="mt-8 border-t border-slate-900/10 pt-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                <Trans en="Language" ru="Язык" kk="Тіл" />
+              </p>
+              <div
+                className="mt-3 inline-flex w-full max-w-sm items-center gap-1 rounded-full border border-slate-900/10 bg-white p-1"
+                role="group"
+                aria-label={
+                  lang === "ru"
+                    ? "Выбор языка"
+                    : lang === "kk"
+                      ? "Тілді таңдау"
+                      : "Choose language"
+                }
+              >
+                <button
+                  type="button"
+                  className={`min-h-11 flex-1 rounded-full px-2 text-xs font-medium transition-colors sm:px-3 sm:text-sm ${
+                    lang === "en"
+                      ? "bg-navy text-white"
+                      : "text-slate-700 hover:bg-slate-50"
+                  }`}
+                  aria-pressed={lang === "en"}
+                  onClick={() => setLang("en")}
+                >
+                  English
+                </button>
+                <button
+                  type="button"
+                  className={`min-h-11 flex-1 rounded-full px-2 text-xs font-medium transition-colors sm:px-3 sm:text-sm ${
+                    lang === "ru"
+                      ? "bg-navy text-white"
+                      : "text-slate-700 hover:bg-slate-50"
+                  }`}
+                  aria-pressed={lang === "ru"}
+                  onClick={() => setLang("ru")}
+                >
+                  Русский
+                </button>
+                <button
+                  type="button"
+                  className={`min-h-11 flex-1 rounded-full px-2 text-xs font-medium transition-colors sm:px-3 sm:text-sm ${
+                    lang === "kk"
+                      ? "bg-navy text-white"
+                      : "text-slate-700 hover:bg-slate-50"
+                  }`}
+                  aria-pressed={lang === "kk"}
+                  onClick={() => setLang("kk")}
+                >
+                  Қазақша
+                </button>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <ButtonLink
+                href="/contact"
+                variant="primary"
+                className="w-full justify-center py-3.5 text-base"
+                onClick={() => setOpen(false)}
+              >
+                {lang === "ru"
+                  ? "Связаться"
+                  : lang === "kk"
+                    ? "Байланысу"
+                    : "Get in touch"}
+              </ButtonLink>
+            </div>
           </Container>
         </div>
       ) : null}

@@ -113,9 +113,9 @@ export default function ContactPage() {
                 />{" "}
                 <Link
                   className="font-medium text-navy hover:text-navy-2"
-                  href="mailto:hello@boolat.example"
+                  href="mailto:tleubayevb@gmail.com"
                 >
-                  hello@boolat.example
+                  tleubayevb@gmail.com
                 </Link>
               </p>
             </div>

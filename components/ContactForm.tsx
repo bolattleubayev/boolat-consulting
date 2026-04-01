@@ -45,6 +45,7 @@ export function ContactForm() {
 
   return (
     <form ref={formRef} action={action} className="mt-8 space-y-5">
+      <input type="hidden" name="locale" value={lang} />
       <div className="grid gap-5 sm:grid-cols-2">
         <Input
           label={
